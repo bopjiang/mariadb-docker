@@ -1,2 +1,2 @@
-# mysql-docker
-mysql docker compose 
+# mariadb-docker
+mariadb docker compose 
