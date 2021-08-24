@@ -43,14 +43,14 @@ slow_query_log_file = /var/log/mysql/slow.log
 long_query_time = 1
 
 ## audit log
-server_audit_events=CONNECT,QUERY,TABLE
-server_audit_logging=on
+#server_audit_events=CONNECT,QUERY,TABLE
+#server_audit_logging=on
 # 指定哪些操作被记录到日志文件中, https://www.cnblogs.com/wclwcw/p/6933294.html
-server_audit_file_path = /var/log/mysql/audit
+#server_audit_file_path = /var/log/mysql/audit
 # 审计日志存放路径，该路径下会生成一个server_audit.log文件，就会记录相关操作记录了
-server_audit_file_rotate_size = 41943040
-server_audit_file_rotations = 200
-server_audit_file_rotate_now = ON
+#server_audit_file_rotate_size = 41943040
+#server_audit_file_rotations = 200
+#server_audit_file_rotate_now = ON
 
 ## 20200117 test
 #interactive_timeout=30
