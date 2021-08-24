@@ -1,0 +1,57 @@
+# Copyright (c) 2014, 2016, Oracle and/or its affiliates. All rights reserved.
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; version 2 of the License.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA
+
+#
+# The MySQL  Server configuration file.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+[mysqld]
+pid-file	= /var/run/mysqld/mysqld.pid
+socket		= /var/run/mysqld/mysqld.sock
+datadir		= /var/lib/mysql
+# By default we only accept connections from localhost
+#bind-address	= 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+
+
+server-id=1990123
+
+# log
+## binlog
+log-bin=binlog
+
+## error log
+log-error	= /var/log/mysql/error.log
+
+## slow log
+slow_query_log_file = /var/log/mysql/slow.log
+long_query_time = 1
+
+## audit log
+server_audit_events=CONNECT,QUERY,TABLE
+server_audit_logging=on
+# 指定哪些操作被记录到日志文件中, https://www.cnblogs.com/wclwcw/p/6933294.html
+server_audit_file_path = /var/log/mysql/audit
+# 审计日志存放路径，该路径下会生成一个server_audit.log文件，就会记录相关操作记录了
+server_audit_file_rotate_size = 41943040
+server_audit_file_rotations = 200
+server_audit_file_rotate_now = ON
+
+## 20200117 test
+#interactive_timeout=30
+#wait_timeout=30
