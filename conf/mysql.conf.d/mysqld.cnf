@@ -55,3 +55,10 @@ long_query_time = 1
 ## 20200117 test
 #interactive_timeout=30
 #wait_timeout=30
+#
+
+# for nextcloud
+transaction_isolation=READ-COMMITTED
+binlog_format=ROW
+innodb_read_only_compressed=0
+
